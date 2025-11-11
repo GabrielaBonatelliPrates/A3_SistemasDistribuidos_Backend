@@ -39,6 +39,13 @@ public class MovimentacaoDAO {
 
     /**
      *
+     * @param produtoDAO sem valor inicial
+     */
+    public MovimentacaoDAO() {
+    }
+
+    /**
+     *
      * @param movimentacao cadastra uma movimentação no MySQL, com paramentro uma movimentação
      */
     public void cadastraMovimentacao(MovimentacaoEstoque movimentacao) {
