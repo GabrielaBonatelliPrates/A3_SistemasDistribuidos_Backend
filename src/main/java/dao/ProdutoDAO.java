@@ -277,7 +277,7 @@ public class ProdutoDAO {
      * @param preco atributo requerido para a atualização de um preço
      * @param id atributo requerido para a atualização de um preço
      */
-    public boolean atualizarPreco(String nome, Double preco, int id) {
+    public boolean atualizarPreco(String nome, double preco, int id) {
         String sql = "UPDATE produtos set nome = ?, preco_unitario = ? WHERE idProduto = ?";
         try (Connection connection = Conexao.conectar(); PreparedStatement statement = connection.prepareStatement(sql)) {
 

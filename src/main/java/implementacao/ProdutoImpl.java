@@ -81,4 +81,14 @@ public class ProdutoImpl extends UnicastRemoteObject implements RemoteProduto {
         return produtoDAO.verificaProduto(nomePesquisado);
     }
     
+    @Override
+    public boolean atualizarPreco(String nome, double preco, int id) throws RemoteException{
+        return produtoDAO.atualizarPreco(nome, preco, id);
+    }
+    
+    @Override
+    public List<Produto> produtosCategoria(Categoria categoriaPesquisada) throws RemoteException{
+        return produtoDAO.produtosCategoria(categoriaPesquisada);
+    }
+    
 }
