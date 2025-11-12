@@ -42,4 +42,10 @@ public interface RemoteProduto {
 
     String verificaProduto(String nomePesquisado)
             throws RemoteException;
+    
+    boolean atualizarPreco(String nome, double preco, int id) 
+            throws RemoteException;
+    
+    List<Produto> produtosCategoria(Categoria categoriaPesquisada) 
+            throws RemoteException;
 }
