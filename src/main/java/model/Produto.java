@@ -143,4 +143,148 @@ public class Produto implements Serializable {
     public int getEstoqueMinimo() {
         return estoqueMinimo;
     }
+    
+    /**
+     *
+     * @param estoqueMinimo atribui um estoque mínimo para o produto
+     */
+    public void setEstoqueMinimo(int estoqueMinimo) {
+        this.estoqueMinimo = estoqueMinimo;
+    }
+
+    /**
+     *
+     * @return estoque máximo
+     */
+    public int getEstoqueMaximo() {
+        return estoqueMaximo;
+    }
+
+    /**
+     *
+     * @param estoqueMaximo atribui um estoque máximo para o produto
+     */
+    public void setEstoqueMaximo(int estoqueMaximo) {
+        this.estoqueMaximo = estoqueMaximo;
+    }
+
+    /**
+     *
+     * @return 
+     */
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    /**
+     *
+     * @param categoria
+     */
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    /**
+     *
+     * @return id do produto
+     */
+    public int getIdProduto() {
+        return idProduto;
+    }
+
+    /**
+     *
+     * @param idProduto atribui um id para o produto
+     */
+    public void setIdProduto(int idProduto) {
+        this.idProduto = idProduto;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public boolean isAcimaMedia() {
+        return acimaMedia;
+    }
+
+    /**
+     *
+     * @param acimaMedia
+     */
+    public void setAcimaMedia(boolean acimaMedia) {
+        this.acimaMedia = acimaMedia;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public boolean isAbaixoMedia() {
+        return abaixoMedia;
+    }
+
+    /**
+     *
+     * @param abaixoMedia
+     */
+    public void setAbaixoMedia(boolean abaixoMedia) {
+        this.abaixoMedia = abaixoMedia;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    /**
+     *
+     * @param valorTotal
+     */
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public double getEstoqueTotal() {
+        return estoqueTotal;
+    }
+
+    /**
+     *
+     * @param estoqueTotal
+     */
+    public void setEstoqueTotal(double estoqueTotal) {
+        this.estoqueTotal += valorTotal;
+    }
+    
+    /**
+     *@author Davi-Wolff
+     * metodo para checar se o produto esta acima/abaixo da media
+     */
+    public void verificaMediaAcima() {
+        if (getQuantidadeEstoque() >= getEstoqueMaximo()) {
+            setAcimaMedia(true);
+        } else {
+            setAcimaMedia(false);
+        }
+    }
+
+    /**
+     *@author Davi-Wolff
+     * metodo para checar se o produto esta acima/abaixo da media
+     */
+    public void verificaMediaAbaixo() {
+        if (getQuantidadeEstoque() <= getEstoqueMinimo()) {
+            setAbaixoMedia(true);
+        } else {
+            setAbaixoMedia(false);
+        }
+    }
 }
