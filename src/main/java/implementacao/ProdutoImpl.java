@@ -13,9 +13,9 @@ public class ProdutoImpl extends UnicastRemoteObject implements RemoteProduto {
 
     private ProdutoDAO produtoDAO;
     
-    public ProdutoImpl(ProdutoDAO produtoDAO) throws RemoteException {
+    public ProdutoImpl() throws RemoteException {
         super(); //Para poder acessar o objeto remotamente via RMI (utilizando o UnicastRemoteObject)
-        this.produtoDAO = produtoDAO;
+        this.produtoDAO = new ProdutoDAO(new CategoriaDAO());
     }
     
     
@@ -39,32 +39,32 @@ public class ProdutoImpl extends UnicastRemoteObject implements RemoteProduto {
     }
     
     @Override
-    public Object buscarPorId(int idProduto) throws RemoteException {
+    public Produto buscarPorId(int idProduto) throws RemoteException {
         return produtoDAO.buscarPorId(idProduto);
     }
     
     @Override
-    public Object buscarPorNome(String nomePesquisado) throws RemoteException {
+    public Produto buscarPorNome(String nomePesquisado) throws RemoteException {
         return produtoDAO.buscarPorNome(nomePesquisado);
     }
     
     @Override
-    public List<Object> pegarProdutos() throws RemoteException {
+    public List<Produto> pegarProdutos() throws RemoteException {
         return produtoDAO.pegarProdutos();
     }
     
     @Override
-    public List<Object> produtosOrdemAlfabética() throws RemoteException {
+    public List<Produto> produtosOrdemAlfabética() throws RemoteException {
         return produtoDAO.produtosOrdemAlfabética();
     }
     
     @Override
-    public List<Object> pegarProdutosAbaixoMinimo() throws RemoteException {
+    public List<Produto> pegarProdutosAbaixoMinimo() throws RemoteException {
         return produtoDAO.pegarProdutosAbaixoMinimo();
     }
     
     @Override
-    public List<Object> pegarProdutosAcimaMaximo() throws RemoteException {
+    public List<Produto> pegarProdutosAcimaMaximo() throws RemoteException {
         return produtoDAO.pegarProdutosAcimaMaximo();
     }
     
