@@ -2,6 +2,8 @@ package remote;
 
 import java.rmi.RemoteException;
 import java.util.List;
+import model.Categoria;
+import model.Produto;
 
 public interface RemoteProduto {
 

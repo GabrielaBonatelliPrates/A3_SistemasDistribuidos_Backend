@@ -5,6 +5,8 @@ import dao.ProdutoDAO;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
+import model.Categoria;
+import model.Produto;
 import remote.RemoteProduto;
 
 public class ProdutoImpl extends UnicastRemoteObject implements RemoteProduto {

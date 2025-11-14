@@ -12,6 +12,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
+import model.MovimentacaoEstoque;
 import remote.RemoteMovimento;
 
 /**
@@ -28,8 +29,8 @@ public class MovimentacaoImpl extends UnicastRemoteObject implements RemoteMovim
     }
     
     @Override
-    public void cadastraMovimentacao(MovimentacaoEstoque movimentacao) throws SQLException,RemoteException{
-        movimentacao.cadastraMovimentacao(movimentacao);
+    public void cadastraMovimentacao(MovimentacaoEstoque movEstoque) throws SQLException,RemoteException{
+        this.movimentacao.cadastraMovimentacao(movEstoque);
     }
     
     @Override
