@@ -1,11 +1,12 @@
 package remote;
 
+import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 import model.Categoria;
 import model.Produto;
 
-public interface RemoteProduto {
+public interface RemoteProduto extends Remote {
 
     void cadastrarProduto(String nomeProduto, double precoUnit, String unidadeProduto, int quantidadeEstoque,
             int estoqueMinimo, int estoqueMaximo, String nomeCategoria, String tamanho, String embalagem)
