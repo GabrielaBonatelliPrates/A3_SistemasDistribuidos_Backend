@@ -1,13 +1,14 @@
 package model;
 
 import dao.CategoriaDAO;
+import java.io.Serializable;
 import java.util.Random;
 
 /**classe Categoria é uma classe para instanciar categorias
  *
  * @author Mateo-Padilla
  */
-public class Categoria {
+public class Categoria implements Serializable{
     
     Random random = new Random();
 
