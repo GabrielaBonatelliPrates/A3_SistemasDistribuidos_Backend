@@ -15,7 +15,7 @@ public interface RemoteMovimento extends Remote{
     
     public void cadastraMovimentacao(MovimentacaoEstoque movimentacao) throws SQLException,RemoteException;
     
-    public void inserirMovimentacao(int idProduto, Date data, int quantidadeMovimentada, String nomeProduto, String tipoMovimentacao) throws SQLException,RemoteException;
+    public void inserirMovimentacao(int idMovimentacao, int idProduto, Date data, int quantidadeMovimentada, String nomeProduto, String tipoMovimentacao) throws SQLException,RemoteException;
     
     public List<MovimentacaoEstoque> listarProdutosMovimentados() throws SQLException,RemoteException;
 

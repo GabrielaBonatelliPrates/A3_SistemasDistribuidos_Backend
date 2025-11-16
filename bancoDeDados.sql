@@ -20,12 +20,13 @@ CREATE TABLE IF NOT EXISTS categorias (
     nomeCategoria VARCHAR(100) NOT NULL,
     tamanho VARCHAR(50) NOT NULL,
     embalagem VARCHAR(50) NOT NULL
-);
+    );
 
 CREATE TABLE IF NOT EXISTS movimentacao_estoque (
     idMovimentacao INT AUTO_INCREMENT PRIMARY KEY,
     tipoMovimentacao VARCHAR(20) NOT NULL,
     idProduto INT NOT NULL,
+    nomeProduto VARCHAR(100) NOT NULL,
     quantidadeMovimentada INT NOT NULL,
     dataMovimentacao DATE NOT NULL,
     FOREIGN KEY (idProduto) REFERENCES produtos(idProduto)

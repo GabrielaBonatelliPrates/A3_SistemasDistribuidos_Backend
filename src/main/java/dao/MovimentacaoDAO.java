@@ -49,11 +49,12 @@ public class MovimentacaoDAO {
      * @param movimentacao cadastra uma movimentação no MySQL, com paramentro uma movimentação
      */
     public void cadastraMovimentacao(MovimentacaoEstoque movimentacao) {
-        int idProduto = movimentacao.getIdProduto();
-        Date data = movimentacao.getDataMovimentacao();
-        int quantidadeMovimentada = movimentacao.getQuantidadeMovimentada();
-        String nomeProduto = movimentacao.getNomeProduto();
+        int idMovimentacao = movimentacao.getIdMovimentacao();
         String tipoMovimentacao = movimentacao.getTipoMovimentacao();
+        int idProduto = movimentacao.getIdProduto();
+        String nomeProduto = movimentacao.getNomeProduto();
+        int quantidadeMovimentada = movimentacao.getQuantidadeMovimentada();
+        Date data = movimentacao.getDataMovimentacao();
 
         //atualiza o estoque com base no tipo de movimentação
         if (tipoMovimentacao.equalsIgnoreCase("entrada")) {
@@ -63,7 +64,7 @@ public class MovimentacaoDAO {
         }
 
         try {
-            inserirMovimentacao(idProduto, data, quantidadeMovimentada, nomeProduto, tipoMovimentacao);
+            inserirMovimentacao(idMovimentacao, tipoMovimentacao,  idProduto, nomeProduto,  quantidadeMovimentada, data);
         } catch (SQLException ex) {
             Logger.getLogger(MovimentacaoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -82,7 +83,7 @@ public class MovimentacaoDAO {
      * @param tipoMovimentacao valor inicial para o tipo da movimentacao
      * @throws SQLException
      */
-    public void inserirMovimentacao(int idProduto, Date data, int quantidadeMovimentada, String nomeProduto, String tipoMovimentacao) throws SQLException {
+    public void inserirMovimentacao(int idMovimentacao, String tipoMovimentacao,  int idProduto, String nomeProduto,  int quantidadeMovimentada, Date data) throws SQLException {
         try (Connection connection = Conexao.conectar()) {
             String sql = "INSERT INTO movimentacao_estoque (tipoMovimentacao, idProduto, nomeProduto, quantidadeMovimentada, dataMovimentacao) "
                     + "VALUES (?, ?, ?, ?, ?)";

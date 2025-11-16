@@ -4,7 +4,9 @@
  */
 package implementacao;
 
+import dao.CategoriaDAO;
 import dao.MovimentacaoDAO;
+import dao.ProdutoDAO;
 import java.rmi.RemoteException;
 import java.rmi.server.RMIClientSocketFactory;
 import java.rmi.server.RMIServerSocketFactory;
@@ -25,7 +27,7 @@ public class MovimentacaoImpl extends UnicastRemoteObject implements RemoteMovim
 
      public MovimentacaoImpl() throws RemoteException {
         super();
-        this.movimentacao = new MovimentacaoDAO();
+        this.movimentacao = new MovimentacaoDAO(new ProdutoDAO(new CategoriaDAO()));
     }
     
     @Override
@@ -34,8 +36,8 @@ public class MovimentacaoImpl extends UnicastRemoteObject implements RemoteMovim
     }
     
     @Override
-    public void inserirMovimentacao(int idProduto, Date data, int quantidadeMovimentada, String nomeProduto, String tipoMovimentacao) throws SQLException,RemoteException{
-        movimentacao.inserirMovimentacao(idProduto, data, quantidadeMovimentada, nomeProduto, tipoMovimentacao);
+    public void inserirMovimentacao(int idMovimentacao, int idProduto, Date data, int quantidadeMovimentada, String nomeProduto, String tipoMovimentacao) throws SQLException,RemoteException{
+        movimentacao.inserirMovimentacao(idMovimentacao, tipoMovimentacao,  idProduto, nomeProduto,  quantidadeMovimentada, data);
     }
     
     @Override
