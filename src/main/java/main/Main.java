@@ -1,9 +1,9 @@
 package main;
 
-import implementacao.CategoriaImpl;
-import implementacao.ConexaoImpl;
-import implementacao.MovimentacaoImpl;
-import implementacao.ProdutoImpl;
+import implementation.CategoriaImpl;
+import implementation.ConexaoImpl;
+import implementation.MovimentacaoImpl;
+import implementation.ProdutoImpl;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import remote.RemoteCategoria;
