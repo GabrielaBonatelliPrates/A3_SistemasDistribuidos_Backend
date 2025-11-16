@@ -1,5 +1,6 @@
 package model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Date;
  *
  * @author Davi-Wolff
  */
-public class MovimentacaoEstoque {
+public class MovimentacaoEstoque implements Serializable{
 
     /**
      * Declaração das variáveis de instância
