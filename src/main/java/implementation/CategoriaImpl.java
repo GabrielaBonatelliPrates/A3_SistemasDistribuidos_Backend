@@ -1,4 +1,4 @@
-package implementacao;
+package implementation;
 
 import dao.CategoriaDAO;
 import java.rmi.RemoteException;
