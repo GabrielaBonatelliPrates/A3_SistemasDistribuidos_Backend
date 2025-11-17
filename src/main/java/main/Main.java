@@ -11,8 +11,16 @@ import remote.RemoteConexao;
 import remote.RemoteMovimento;
 import remote.RemoteProduto;
 
+/**
+ *
+ * @author Cesar Augusto
+ */
 public class Main {
 
+    /**
+     *
+     * @param args parametro da classe main para rodar o sistema
+     */
     public static void main(String[] args) {
         try {
             

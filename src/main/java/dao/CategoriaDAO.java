@@ -13,20 +13,18 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import model.Categoria;
 
-/**CategoriaDAO é uma classe que faz a ligação de Categoria com o banco de dados
+/**CategoriaDAO é uma classe que faz a ligação da classe Categoria com o banco de dados.
  *
- * @author laispaivaportela
  */
 public class CategoriaDAO {
 
     /**
-     * Cria lista que vai armazenar os produtos
+     * Cria lista que vai armazenar os produtos.
      */
     public static final List<Categoria> categorias = new ArrayList<>(); 
 
     /**
      * Lista criada para armazenar novas categorias a partir do banco de dados.
-     * @author Estermrn
      */
     public static final List<Categoria> listaAtualizada = new ArrayList<>();
 
@@ -118,7 +116,7 @@ public class CategoriaDAO {
 
     /**
      *
-     * @return odel retorna um novo modelo de tabela
+     * @return model retorna um novo modelo de tabela
      * @throws SQLException detecta erros de conexão com o banco SQL
      */
     public DefaultTableModel tabelaAtualizada() throws SQLException {
@@ -219,7 +217,6 @@ public class CategoriaDAO {
     /**
      * Atualiza os dados de uma categoria no banco de dados.
      * 
-     * @author Estermrn
      * @param nomeCategoria novo nome da categoria.
      * @param tamanho novo tamanho da categoria.
      * @param embalagem nova embalagem da categoria.
@@ -249,7 +246,6 @@ public class CategoriaDAO {
 
     /** Deleta uma categoria do banco de dados com base no ID.
      *
-     * @author Estermrn
      * @param idCategoria identificador da categoria que será deletada.
      * @return true caso a categoria seja deletada, false caso contrário.
      */
@@ -385,7 +381,6 @@ public class CategoriaDAO {
     /**
      * Pega todas as categorias cadastradas no banco de dados e retorna uma lista atualizada.
      * 
-     * @author Estermrn
      * @return lista atualizada com todas as categorias encontradas no banco de dados.
      */
     public List<Categoria> pegarCategorias() {

@@ -11,7 +11,6 @@ import java.sql.SQLException;
 public class Conexao {
 
     /**
-     * @author laispaivaportela
      * @return connection retorna a conexão efetivada corretamente
      */
     public static Connection conectar() {

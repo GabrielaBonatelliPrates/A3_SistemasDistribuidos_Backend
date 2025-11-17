@@ -17,7 +17,6 @@ import model.Categoria;
 
 /**ProdutoDAO é uma classe que implementa um novo produto ao banco de dados
  *
- * @author laispaivaportela
  */
 public class ProdutoDAO {
 
@@ -50,7 +49,7 @@ public class ProdutoDAO {
      */
     public void cadastrarProduto(String nomeProduto, double precoUnit, String unidadeProduto,
             int quantidadeEstoque, int estoqueMinimo, int estoqueMaximo,
-            String nomeCategoria, String tamanho, String embalagem) { //vai servir pra cadastrar produtos com quando a classe categoria tiver implementada certinho
+            String nomeCategoria, String tamanho, String embalagem) { 
 
         //método para colocar o produto no banco de dados
         inserirProduto(nomeProduto, precoUnit, unidadeProduto, quantidadeEstoque,
@@ -92,7 +91,7 @@ public class ProdutoDAO {
             //executa a query para armazenar os dados
             statement.executeUpdate();
 
-            ResultSet resultSet = statement.getGeneratedKeys(); //devolve o id (gerado automaticamente pelo sql - posteriormente vamos substituir por um método (dicas do professor))
+            ResultSet resultSet = statement.getGeneratedKeys(); //devolve o id (gerado automaticamente pelo sql 
             if (resultSet.next()) {
                 int idGerado = resultSet.getInt(1); //vai ler o id gerado
 
@@ -116,7 +115,7 @@ public class ProdutoDAO {
      * @return produtos retorna uma lista de produtos
      */
     public List emiteLista() {
-        return produtos; //retorna a lista 
+        return produtos; 
     }
 
     /**

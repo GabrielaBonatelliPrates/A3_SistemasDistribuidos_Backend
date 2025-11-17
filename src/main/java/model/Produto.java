@@ -2,8 +2,13 @@ package model;
 
 import java.io.Serializable;
 
-//classe Produto é uma classe para instanciar produtos
- 
+/**
+*classe Produto é uma classe para instanciar produtos
+* 
+*@author GabrielaBonatelliPrates
+* 
+*/
+
 public class Produto implements Serializable {
 
     /**
@@ -170,7 +175,7 @@ public class Produto implements Serializable {
 
     /**
      *
-     * @return 
+     * @return categoria 
      */
     public Categoria getCategoria() {
         return categoria;
@@ -178,7 +183,7 @@ public class Produto implements Serializable {
 
     /**
      *
-     * @param categoria
+     * @param categoria parametro necessario para instanciar uma categoria
      */
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
@@ -202,7 +207,7 @@ public class Produto implements Serializable {
 
     /**
      *
-     * @return
+     * @return acimaMedia
      */
     public boolean isAcimaMedia() {
         return acimaMedia;
@@ -210,7 +215,7 @@ public class Produto implements Serializable {
 
     /**
      *
-     * @param acimaMedia
+     * @param acimaMedia parametro necessario para definir um produto acima da media 
      */
     public void setAcimaMedia(boolean acimaMedia) {
         this.acimaMedia = acimaMedia;
@@ -218,7 +223,7 @@ public class Produto implements Serializable {
 
     /**
      *
-     * @return
+     * @return abaixoMedia
      */
     public boolean isAbaixoMedia() {
         return abaixoMedia;
@@ -226,7 +231,7 @@ public class Produto implements Serializable {
 
     /**
      *
-     * @param abaixoMedia
+     * @param abaixoMedia parametro necessario para definir um produto abaixo da media 
      */
     public void setAbaixoMedia(boolean abaixoMedia) {
         this.abaixoMedia = abaixoMedia;
@@ -234,7 +239,7 @@ public class Produto implements Serializable {
 
     /**
      *
-     * @return
+     * @return valorTotal
      */
     public double getValorTotal() {
         return valorTotal;
@@ -242,7 +247,7 @@ public class Produto implements Serializable {
 
     /**
      *
-     * @param valorTotal
+     * @param valorTotal parametro necessario para definir o valor total de um produto 
      */
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
@@ -250,7 +255,7 @@ public class Produto implements Serializable {
 
     /**
      *
-     * @return
+     * @return estoqueTotal
      */
     public double getEstoqueTotal() {
         return estoqueTotal;
@@ -258,7 +263,7 @@ public class Produto implements Serializable {
 
     /**
      *
-     * @param estoqueTotal
+     * @param estoqueTotal parametro necessario para definir o estoque total dos produtos
      */
     public void setEstoqueTotal(double estoqueTotal) {
         this.estoqueTotal += valorTotal;
